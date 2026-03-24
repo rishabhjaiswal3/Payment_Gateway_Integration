@@ -29,7 +29,7 @@ const RazorpayGateway = () => {
       return;
     }
 
-    const result = await axios.post("http://localhost:5000/payment/order",{amount:2000});
+    const result = await axios.post(`${process.env.VITE_API_ENDPOINT}/payment/order`,{amount:2000});
 
     if (!result) {
       alert("Server error. Are you online?");
@@ -39,7 +39,7 @@ const RazorpayGateway = () => {
     const { amount, id: order_id, currency } = result.data;
 
     const options = {
-      key: "ADD_API_KEY_HERE", // Enter the Key ID generated from the Dashboard
+      key: process.env.RAZORPAY_API_KEY, // Enter the Key ID generated from the Dashboard
       amount: amount.toString(),
       currency: currency,
       name: "Soumya Corp.",

@@ -1,8 +1,8 @@
 import './App.css';
 import RazorpayGateway from './components/razorpay/RazorpayGateway.jsx';
+import StripeGateway from './components/stripe/Stripe.jsx';
+
 function App() {
-
-
 
   return (
     <div className="align-center flex">
@@ -14,7 +14,8 @@ function App() {
           <RazorpayGateway/>
         </h3>
         <h3>
-          Stripe Integration (will added soon)
+          Stripe Integration 
+          <StripeGateway />
         </h3>
       </div>
     </div>
